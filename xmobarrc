@@ -10,6 +10,9 @@ Config {
       , Run Memory ["-t", "<usedipat> <usedratio>%", "--", "--used-icon-pattern", "<icon=hbar_%%.xbm/>"] 100
       , Run Swap ["-t", "<usedratio>%"] 100
       , Run Cpu ["-t", "<ipat> <total>%", "--", "--load-icon-pattern", "<icon=hbar_%%.xbm/>"] 10
+      , Run CoreTemp ["-t", "<core0>⁰C",
+               "-L", "40", "-H", "70",
+               "-l", "lightblue", "-n", "gray90", "-h", "red"] 10
       , Run DiskU [ ("/",                  "<fc=violet>slash: <usedipat> <usedp>%</fc> | ")
                   , ("/home",              "<fc=purple>home: <usedipat> <usedp>%</fc>")
                   ] ["--", "--used-icon-pattern", "<icon=hbar_%%.xbm/>"] 100
@@ -25,6 +28,7 @@ Config {
   , template =
       "%UnsafeXMonadLog% \
       \} <fc=brown>%cpu% %top%</fc> \
+      \| %coretemp% \
       \| <fc=darkcyan>%memory% (%swap%) %topmem%</fc> \
       \| %disku% \
       \| <fc=magenta>%date%</fc> \
