@@ -20,6 +20,7 @@ Config {
       , Run TopProc ["-t", "<name1>"] 100
       , Run TopMem ["-t", "<name1>"] 100
       , Run Kbd []
+      , Run Com "xinput-mouse-state" [] "mstate" 1
       ]
   , lowerOnStart = True
   , sepChar = "%"
@@ -32,5 +33,6 @@ Config {
       \| <fc=darkcyan>%memory% (%swap%) %topmem%</fc> \
       \| %disku% \
       \| <fc=magenta>%date%</fc> \
-      \| %kbd%{"
+      \| %kbd% \
+      \| %mstate%{"
 }
