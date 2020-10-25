@@ -34,5 +34,5 @@ Config {
       \| %disku% \
       \| <fc=magenta>%date%</fc> \
       \| %kbd% \
-      \| %mstate%{"
+      \| <icon=mstate_%mstate%.xbm/>{"
 }
