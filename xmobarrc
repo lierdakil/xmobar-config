@@ -19,7 +19,7 @@ Config {
       , Run Com "date" ["+%c"] "date" 10
       , Run TopProc ["-t", "<name1>"] 100
       , Run TopMem ["-t", "<name1>"] 100
-      , Run Kbd []
+      , Run Com "xkblayout-state" ["print", "%s"] "kbd" 1
       , Run Com "xinput-mouse-state" [] "mstate" 1
       ]
   , lowerOnStart = True
