@@ -23,6 +23,7 @@ Config {
       , Run Com "xinput-mouse-state" [] "mstate" 1
       ]
   , lowerOnStart = True
+  , overrideRedirect = True
   , sepChar = "%"
   , iconRoot = "./.config/xmobar/icons"
   , alignSep = "}{"
