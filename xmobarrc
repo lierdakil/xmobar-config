@@ -1,10 +1,10 @@
 Config {
-    font = "xft:Fira Mono:pixelsize=14:antialias=true:style=Bold"
+    font = "Fira Code Semi-Bold 16px"
   , borderColor = "black"
   , border = NoBorder
   , bgColor = "#3f3c6d"
   , fgColor = "#a8a3f7"
-  , position = Top
+  , position = TopSize C 100 20
   , commands =
       [ Run UnsafeXMonadLog
       , Run Memory ["-t", "<usedipat> <usedratio>%", "--", "--used-icon-pattern", "<icon=hbar_%%.xbm/>"] 100
@@ -14,7 +14,7 @@ Config {
                "-L", "40", "-H", "70",
                "-l", "lightblue", "-n", "gray90", "-h", "red"] 10
       , Run DiskU [ ("/",                  "<fc=violet>slash: <usedipat> <usedp>%</fc> | ")
-                  , ("/home",              "<fc=purple>home: <usedipat> <usedp>%</fc>")
+                  , ("/home",              "<fc=grey>home: <usedipat> <usedp>%</fc>")
                   ] ["--", "--used-icon-pattern", "<icon=hbar_%%.xbm/>"] 100
       , Run Com "date" ["+%c"] "date" 10
       , Run TopProc ["-t", "<name1>"] 100
@@ -27,13 +27,14 @@ Config {
   , sepChar = "%"
   , iconRoot = "./.config/xmobar/icons"
   , alignSep = "}{"
-  , template =
-      "%UnsafeXMonadLog% \
-      \} <fc=brown>%cpu% %top%</fc> \
+  , template = "\
+      \%UnsafeXMonadLog% \
+      \}{ <fc=brown>%cpu% %top%</fc> \
       \| %coretemp% \
       \| <fc=darkcyan>%memory% (%swap%) %topmem%</fc> \
       \| %disku% \
       \| <fc=magenta>%date%</fc> \
       \| %kbd% \
-      \| <icon=mstate_%mstate%.xbm/>{"
+      \| <icon=mstate_%mstate%.xbm/>\
+      \  <hspace=200/>"
 }
